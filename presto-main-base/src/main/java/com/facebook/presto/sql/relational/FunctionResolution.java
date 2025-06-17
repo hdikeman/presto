@@ -342,6 +342,18 @@ public final class FunctionResolution
     }
 
     @Override
+    public boolean isSumFunction(FunctionHandle functionHandle)
+    {
+        return functionAndTypeResolver.getFunctionMetadata(functionHandle).getName().equals(functionAndTypeResolver.qualifyObjectName(QualifiedName.of("sum")));
+    }
+
+    @Override
+    public boolean isAverageFunction(FunctionHandle functionHandle)
+    {
+        return functionAndTypeResolver.getFunctionMetadata(functionHandle).getName().equals(functionAndTypeResolver.qualifyObjectName(QualifiedName.of("avg")));
+    }
+
+    @Override
     public boolean supportsArbitraryFunction()
     {
         try {

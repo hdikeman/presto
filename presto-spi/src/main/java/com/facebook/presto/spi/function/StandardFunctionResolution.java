@@ -64,6 +64,10 @@ public interface StandardFunctionResolution
 
     boolean isCountIfFunction(FunctionHandle functionHandle);
 
+    boolean isAverageFunction(FunctionHandle functionHandle);
+
+    boolean isSumFunction(FunctionHandle functionHandle);
+
     FunctionHandle countFunction();
 
     FunctionHandle countFunction(Type valueType);
