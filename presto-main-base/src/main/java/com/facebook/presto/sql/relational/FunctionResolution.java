@@ -318,6 +318,18 @@ public final class FunctionResolution
     }
 
     @Override
+    public boolean isAverageFunction(FunctionHandle functionHandle)
+    {
+        return functionAndTypeResolver.getFunctionMetadata(functionHandle).getName().equals(functionAndTypeResolver.qualifyObjectName(QualifiedName.of("avg")));
+    }
+
+    @Override
+    public boolean isSumFunction(FunctionHandle functionHandle)
+    {
+        return functionAndTypeResolver.getFunctionMetadata(functionHandle).getName().equals(functionAndTypeResolver.qualifyObjectName(QualifiedName.of("sum")));
+    }
+
+    @Override
     public FunctionHandle countFunction()
     {
         return functionAndTypeResolver.lookupFunction("count", ImmutableList.of());
